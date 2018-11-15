@@ -1,0 +1,14 @@
+{
+  "ProjectFilePath": "c:\\Users\\solan\\OneDrive\\Documents\\2018 Fall\\IAT 410\\New game\\Colors\\Assembly-CSharp.csproj",
+  "TargetFramework": "v3.5",
+  "TagHelpers": [],
+  "Configuration": {
+    "ConfigurationName": "UnsupportedRazor",
+    "LanguageVersion": "1.0",
+    "Extensions": [
+      {
+        "ExtensionName": "UnsupportedRazorExtension"
+      }
+    ]
+  }
+}
