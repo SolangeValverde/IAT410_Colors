@@ -191,10 +191,7 @@ public class Bars : MonoBehaviour
     }
     ///*
 
-    void Mute()
-    {
 
-    }
     void OnCollisionEnter2D(Collision2D collision)
     {
         //  bar = GameObject.FindGameObjectsWithTag("bar");
