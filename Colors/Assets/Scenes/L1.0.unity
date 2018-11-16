@@ -291,6 +291,10 @@ Prefab:
       propertyPath: delta
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1314312912396600, guid: b50f08d8dd694aa49beaceac98ada810, type: 2}
+      propertyPath: m_TagString
+      value: MovingBar
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b50f08d8dd694aa49beaceac98ada810, type: 2}
   m_IsPrefabAsset: 0
@@ -618,7 +622,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4887168212997442, guid: 9351093d93eede340a40f1debda43e8c, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 3.8607078
+      value: 3.207
       objectReference: {fileID: 0}
     - target: {fileID: 4887168212997442, guid: 9351093d93eede340a40f1debda43e8c, type: 2}
       propertyPath: m_LocalPosition.z
@@ -643,6 +647,10 @@ Prefab:
     - target: {fileID: 4887168212997442, guid: 9351093d93eede340a40f1debda43e8c, type: 2}
       propertyPath: m_RootOrder
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4887168212997442, guid: 9351093d93eede340a40f1debda43e8c, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 5.2991276
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9351093d93eede340a40f1debda43e8c, type: 2}
@@ -1031,11 +1039,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4990279719149042, guid: b50f08d8dd694aa49beaceac98ada810, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.34
+      value: -0.27
       objectReference: {fileID: 0}
     - target: {fileID: 4990279719149042, guid: b50f08d8dd694aa49beaceac98ada810, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -3.82
+      value: -4.12
       objectReference: {fileID: 0}
     - target: {fileID: 4990279719149042, guid: b50f08d8dd694aa49beaceac98ada810, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1088,6 +1096,10 @@ Prefab:
         type: 2}
       propertyPath: delta
       value: 4.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1314312912396600, guid: b50f08d8dd694aa49beaceac98ada810, type: 2}
+      propertyPath: m_TagString
+      value: MovingBar
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b50f08d8dd694aa49beaceac98ada810, type: 2}

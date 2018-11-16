@@ -5,14 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
+    public GameObject character;
+    public GameObject[] door;
+    public GameObject[] floor;
     SpriteRenderer m_SpriteRenderer;
     Color m_NewColor;
     bool canJump;
+
     private Rigidbody2D rb;
-    public GameObject[] door;
-    public GameObject[] floor;
+
     void Start()
     {
+        character = GameObject.FindGameObjectsWithTag("Player")[0];
         m_SpriteRenderer = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         canJump = true;
@@ -21,9 +25,12 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        //character.transform.localScale = new Vector3(0.27F, 0.27F, 0.27F);
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //movement
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        
         if (canJump && Input.GetKey(KeyCode.W))
         {
             // the cube is going to move upwards in 5 units per second
@@ -94,15 +101,31 @@ public class Player : MonoBehaviour
 
     }
 
+    // void OnCollisionEnter2D(Collision2D other)
+    // {
+    //     if (other.gameObject.tag == "MovingBar")
+    //     {
+    //         moveWithPlatform = true;
+    //     }
+    // }
+    // // called when this GameObject collides with GameObject2.
 
-    // called when this GameObject collides with GameObject2.
+    // void OnTriggerExit(Collider other)
+    // {
+    //     character.transform.parent = null;
+    // }
+
+
     void OnTriggerEnter2D(Collider2D collision)
     {
         door = GameObject.FindGameObjectsWithTag("door");
         floor = GameObject.FindGameObjectsWithTag("floor");
         //bar = this.gameObject;
 
-
+        // if (collision.gameObject.tag == "MovingBar")
+        // {
+        //     character.transform.parent = collision.gameObject.transform; 
+        // }
         if (collision.gameObject == door[0])
         {
             Debug.Log("SceneManager.GetActiveScene().buildIndex " + SceneManager.GetActiveScene().buildIndex);

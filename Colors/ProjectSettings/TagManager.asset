@@ -7,6 +7,7 @@ TagManager:
   - bar
   - door
   - floor
+  - MovingBar
   layers:
   - Default
   - TransparentFX
