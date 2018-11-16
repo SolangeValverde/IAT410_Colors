@@ -54,9 +54,11 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Bars.cs" />
+     <Compile Include="Assets\Scripts\changingColors.cs" />
      <Compile Include="Assets\Scripts\MovingBars.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\PlayerFollower.cs" />
+     <Compile Include="Assets\Scripts\verticalMovingBars.cs" />
  <Reference Include="UnityEditor.StandardEvents">
  <HintPath>C:/Users/solan/OneDrive/Documents/2018 Fall/IAT 410/IAT410_Colors/Colors/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
  </Reference>
