@@ -20,10 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4056002879278716}
   - component: {fileID: 212904257524987108}
-  - component: {fileID: 61183639737999792}
-  - component: {fileID: 114757735831082858}
   - component: {fileID: 114192075401892810}
-  - component: {fileID: 114076887638482648}
+  - component: {fileID: 61328703494172548}
   m_Layer: 0
   m_Name: verticalChangingBar
   m_TagString: bar
@@ -39,12 +37,12 @@ Transform:
   m_GameObject: {fileID: 1273430755673480}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 41.93, y: -3.04, z: 0}
-  m_LocalScale: {x: 0.07453541, y: 1.1083313, z: 0.683}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
---- !u!61 &61183639737999792
+--- !u!61 &61328703494172548
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -60,29 +58,15 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 13.83, y: 4.14}
+    oldSize: {x: 4.14, y: 0.68}
     newSize: {x: 13.83, y: 4.14}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 13.83, y: 4.14}
+  m_Size: {x: 4.14, y: 0.68}
   m_EdgeRadius: 0
---- !u!114 &114076887638482648
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1273430755673480}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5156d27d8ff301468976480eee4ddbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ChangingColor: 1
-  delta: 3
-  speed: 3
 --- !u!114 &114192075401892810
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -95,19 +79,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bar: []
---- !u!114 &114757735831082858
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1273430755673480}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a0e8c5dee5307b418b93230932d08c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  delta: 3.5
-  speed: -1
 --- !u!212 &212904257524987108
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //movement
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        
+
         if (canJump && Input.GetKey(KeyCode.W))
         {
             // the cube is going to move upwards in 5 units per second
@@ -68,7 +68,7 @@ public class Player : MonoBehaviour
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //color change
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKeyDown(KeyCode.LeftArrow)||Input.GetKeyDown(KeyCode.Alpha4))
         {
             //Set the Color to the values gained from the Sliders
             m_NewColor = new Color(0.784f, 0f, 0f, 1f);
@@ -77,21 +77,21 @@ public class Player : MonoBehaviour
             m_SpriteRenderer.color = m_NewColor;
             //  Debug.Log("red");
         }
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.UpArrow)||Input.GetKeyDown(KeyCode.Alpha8))
         {
             m_NewColor = new Color(0f, 0f, 0.784f, 1f);
             m_SpriteRenderer.color = m_NewColor;
             //  Debug.Log("blue");
         }
 
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.RightArrow)||Input.GetKeyDown(KeyCode.Alpha6))
         {
             m_NewColor = new Color(0.784f, 0.784f, 0f, 1f);
             m_SpriteRenderer.color = m_NewColor;
             //  Debug.Log("yellow");
 
         }
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKeyDown(KeyCode.DownArrow)||Input.GetKeyDown(KeyCode.Alpha2))
         {
             m_NewColor = new Color(0f, 0.784f, 0f, 1f);
             m_SpriteRenderer.color = m_NewColor;
@@ -131,10 +131,13 @@ public class Player : MonoBehaviour
             Debug.Log("SceneManager.GetActiveScene().buildIndex " + SceneManager.GetActiveScene().buildIndex);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
-
-        if (collision.gameObject == floor[0])
+        for (int i = 0; i<floor.Length;i++)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            if (collision.gameObject == floor[i])
+            {
+                Debug.Log("WASTED");
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
         }
     }
 

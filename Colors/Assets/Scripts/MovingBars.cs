@@ -201,16 +201,8 @@ public class MovingBars : MonoBehaviour
         if (onMovingBar)
         {
             //player.transform.localScale = new Vector3(0.3F, 3.4F, 0.4F);
-            Debug.Log("scale: "+ player.transform.localScale);
-            // Vector3 zero =  player.GetComponent<Rigidbody2D>().velocity;
-            // zero.y =0;
-            // zero.x =0;
-            // player.GetComponent<Rigidbody2D>().velocity = zero;
-
-            // Vector3 vP = player.transform.position;
-            // vP.x += startPos.x + delta * Mathf.Sin(Time.time * speed);
-            // vP.y = player.transform.position.y;
-            // player.transform.position = vP;
+          //  Debug.Log("scale: "+ player.transform.localScale);
+          
         }
     }
 
