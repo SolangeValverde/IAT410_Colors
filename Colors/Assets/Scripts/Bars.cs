@@ -201,6 +201,7 @@ public class Bars : MonoBehaviour
 
         if (collision.gameObject.name != "bar")
         {
+            //this.GetComponent<SpriteRenderer>().material.dynamicFriction = 1;
             for (int i = 0; i < bar.Length; i++)
             {
 

@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
         //movement
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        if (canJump && Input.GetKey(KeyCode.W))
+        if (canJump && Input.GetKey(KeyCode.UpArrow))
         {
             // the cube is going to move upwards in 5 units per second
             //rb.velocity = new Vector3(0, 10, 0);
@@ -39,21 +39,29 @@ public class Player : MonoBehaviour
             canJump = false;
             //  Debug.Log("jump");
         }
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.RightArrow))
         {
             //rb.velocity = new Vector3(3, 0, 0);
             rb.AddForce(new Vector2(12, 0));
             //  Debug.Log("RIGHT");
         }
 
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
             //rb.velocity = new Vector3(-3, 0, 0);
             rb.AddForce(new Vector2(-12, 0));
 
             //  Debug.Log("LEFT");
         }
+        if (Input.GetKeyUp(KeyCode.LeftArrow)||Input.GetKeyUp(KeyCode.RightArrow))
+        {
+         //   rb.Sleep ();  //Clears Force!
+          //  rb.velocity=new Vector2(0, 0);
+           // rb.AddForce(new Vector2(0, 0));
 
+            //  Debug.Log("LEFT");
+        }
+        
         if (rb.velocity.y == 0)
         {
             rb.AddForce(new Vector2(0, -400));
@@ -68,7 +76,7 @@ public class Player : MonoBehaviour
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //color change
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        if (Input.GetKeyDown(KeyCode.LeftArrow)||Input.GetKeyDown(KeyCode.Alpha4))
+        if (Input.GetKeyDown(KeyCode.A)||Input.GetKeyDown(KeyCode.Alpha4))
         {
             //Set the Color to the values gained from the Sliders
             m_NewColor = new Color(0.784f, 0f, 0f, 1f);
@@ -77,21 +85,21 @@ public class Player : MonoBehaviour
             m_SpriteRenderer.color = m_NewColor;
             //  Debug.Log("red");
         }
-        if (Input.GetKeyDown(KeyCode.UpArrow)||Input.GetKeyDown(KeyCode.Alpha8))
+        if (Input.GetKeyDown(KeyCode.W)||Input.GetKeyDown(KeyCode.Alpha8))
         {
             m_NewColor = new Color(0f, 0f, 0.784f, 1f);
             m_SpriteRenderer.color = m_NewColor;
             //  Debug.Log("blue");
         }
 
-        if (Input.GetKeyDown(KeyCode.RightArrow)||Input.GetKeyDown(KeyCode.Alpha6))
+        if (Input.GetKeyDown(KeyCode.D)||Input.GetKeyDown(KeyCode.Alpha6))
         {
             m_NewColor = new Color(0.784f, 0.784f, 0f, 1f);
             m_SpriteRenderer.color = m_NewColor;
             //  Debug.Log("yellow");
 
         }
-        if (Input.GetKeyDown(KeyCode.DownArrow)||Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetKeyDown(KeyCode.S)||Input.GetKeyDown(KeyCode.Alpha2))
         {
             m_NewColor = new Color(0f, 0.784f, 0f, 1f);
             m_SpriteRenderer.color = m_NewColor;
@@ -135,7 +143,7 @@ public class Player : MonoBehaviour
         {
             if (collision.gameObject == floor[i])
             {
-                Debug.Log("WASTED");
+              //  Debug.Log("WASTED");
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
         }
