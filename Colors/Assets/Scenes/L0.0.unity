@@ -593,7 +593,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4356590261839996, guid: 3ed5c25a0c006b44688b63d0b0bb1b8e, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2.8
+      value: -2.37
       objectReference: {fileID: 0}
     - target: {fileID: 4356590261839996, guid: 3ed5c25a0c006b44688b63d0b0bb1b8e, type: 2}
       propertyPath: m_LocalPosition.z
@@ -625,7 +625,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4356590261839996, guid: 3ed5c25a0c006b44688b63d0b0bb1b8e, type: 2}
       propertyPath: m_LocalScale.y
-      value: 2.253944
+      value: 2.5958538
       objectReference: {fileID: 0}
     - target: {fileID: 4356590261839996, guid: 3ed5c25a0c006b44688b63d0b0bb1b8e, type: 2}
       propertyPath: m_LocalScale.x
@@ -865,7 +865,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4477068898199078, guid: 7a258d28091bbdb48beadf44c241447c, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -9.66
+      value: -7.5
       objectReference: {fileID: 0}
     - target: {fileID: 4477068898199078, guid: 7a258d28091bbdb48beadf44c241447c, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1060,36 +1060,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 8.3, y: 2.49}
-  m_EdgeRadius: 0
---- !u!1 &1692522814 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1615902562148602, guid: 30347a870c1a93746b3d287948afdff6,
-    type: 2}
-  m_PrefabInternal: {fileID: 880142973}
---- !u!61 &1692522816
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1692522814}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.14, y: 0.68}
-    newSize: {x: 13.83, y: 4.14}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 4.14, y: 0.68}
   m_EdgeRadius: 0
 --- !u!1001 &1814049662
 Prefab:

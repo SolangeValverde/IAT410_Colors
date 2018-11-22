@@ -11,15 +11,18 @@ public class Player : MonoBehaviour
     SpriteRenderer m_SpriteRenderer;
     Color m_NewColor;
     bool canJump;
-
+    private IceBlock IceBlock1;
     private Rigidbody2D rb;
-
+    public bool goingRight;
+public bool IceLevel;
     void Start()
     {
         character = GameObject.FindGameObjectsWithTag("Player")[0];
         m_SpriteRenderer = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         canJump = true;
+        GameObject iceBlock = GameObject.Find("IceBlock");
+        IceBlock1 = iceBlock.GetComponent<IceBlock>();
     }
 
     // Update is called once per frame
@@ -41,27 +44,45 @@ public class Player : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            //rb.velocity = new Vector3(3, 0, 0);
+            goingRight = true;
             rb.AddForce(new Vector2(12, 0));
-            //  Debug.Log("RIGHT");
+            if (IceBlock1.OnIce)
+            {
+
+                rb.AddForce(new Vector2(40, 0));
+              //  Debug.Log("vel " + rb.velocity);
+            } //rb.velocity = new Vector3(3, 0, 0);
+             else if(!IceLevel)
+            {
+                rb.AddForce(new Vector2(12, 0));
+            }
         }
 
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            //rb.velocity = new Vector3(-3, 0, 0);
+            goingRight = false;
             rb.AddForce(new Vector2(-12, 0));
+            if (IceBlock1.OnIce)
+            {
 
+                rb.AddForce(new Vector2(-40, 0));
+               // Debug.Log("vel " + rb.velocity);
+            }
+            else if(!IceLevel)
+            {
+                rb.AddForce(new Vector2(-12, 0));
+            }
             //  Debug.Log("LEFT");
         }
-        if (Input.GetKeyUp(KeyCode.LeftArrow)||Input.GetKeyUp(KeyCode.RightArrow))
+        if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow))
         {
-         //   rb.Sleep ();  //Clears Force!
-          //  rb.velocity=new Vector2(0, 0);
-           // rb.AddForce(new Vector2(0, 0));
+            //   rb.Sleep ();  //Clears Force!
+            //  rb.velocity=new Vector2(0, 0);
+            // rb.AddForce(new Vector2(0, 0));
 
             //  Debug.Log("LEFT");
         }
-        
+
         if (rb.velocity.y == 0)
         {
             rb.AddForce(new Vector2(0, -400));
@@ -76,7 +97,7 @@ public class Player : MonoBehaviour
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //color change
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        if (Input.GetKeyDown(KeyCode.A)||Input.GetKeyDown(KeyCode.Alpha4))
+        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.Alpha4))
         {
             //Set the Color to the values gained from the Sliders
             m_NewColor = new Color(0.784f, 0f, 0f, 1f);
@@ -85,21 +106,21 @@ public class Player : MonoBehaviour
             m_SpriteRenderer.color = m_NewColor;
             //  Debug.Log("red");
         }
-        if (Input.GetKeyDown(KeyCode.W)||Input.GetKeyDown(KeyCode.Alpha8))
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Alpha8))
         {
             m_NewColor = new Color(0f, 0f, 0.784f, 1f);
             m_SpriteRenderer.color = m_NewColor;
             //  Debug.Log("blue");
         }
 
-        if (Input.GetKeyDown(KeyCode.D)||Input.GetKeyDown(KeyCode.Alpha6))
+        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.Alpha6))
         {
             m_NewColor = new Color(0.784f, 0.784f, 0f, 1f);
             m_SpriteRenderer.color = m_NewColor;
             //  Debug.Log("yellow");
 
         }
-        if (Input.GetKeyDown(KeyCode.S)||Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.Alpha2))
         {
             m_NewColor = new Color(0f, 0.784f, 0f, 1f);
             m_SpriteRenderer.color = m_NewColor;
@@ -109,19 +130,6 @@ public class Player : MonoBehaviour
 
     }
 
-    // void OnCollisionEnter2D(Collision2D other)
-    // {
-    //     if (other.gameObject.tag == "MovingBar")
-    //     {
-    //         moveWithPlatform = true;
-    //     }
-    // }
-    // // called when this GameObject collides with GameObject2.
-
-    // void OnTriggerExit(Collider other)
-    // {
-    //     character.transform.parent = null;
-    // }
 
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -139,17 +147,27 @@ public class Player : MonoBehaviour
             Debug.Log("SceneManager.GetActiveScene().buildIndex " + SceneManager.GetActiveScene().buildIndex);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
-        for (int i = 0; i<floor.Length;i++)
+        for (int i = 0; i < floor.Length; i++)
         {
             if (collision.gameObject == floor[i])
             {
-              //  Debug.Log("WASTED");
+                //  Debug.Log("WASTED");
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
         }
     }
 
+    void OnCollisionEnter2D(Collision2D collision)
+    {
 
+        if (collision.gameObject.tag != "IceBlock")
+        {
+            rb.drag = 1;
+            //Debug.Log("drag " + character.GetComponent<Rigidbody2D>().drag);
+
+        }
+
+    }
 
 
 
