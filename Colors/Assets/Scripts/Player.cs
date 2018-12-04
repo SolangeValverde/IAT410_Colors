@@ -21,8 +21,8 @@ public bool IceLevel;
         m_SpriteRenderer = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         canJump = true;
-        GameObject iceBlock = GameObject.Find("IceBlock");
-        IceBlock1 = iceBlock.GetComponent<IceBlock>();
+        //GameObject iceBlock = GameObject.Find("IceBlock");
+        //IceBlock1 = iceBlock.GetComponent<IceBlock>();
     }
 
     // Update is called once per frame
@@ -46,13 +46,13 @@ public bool IceLevel;
         {
             goingRight = true;
             rb.AddForce(new Vector2(12, 0));
-            if (IceBlock1.OnIce)
-            {
-
-                rb.AddForce(new Vector2(40, 0));
-              //  Debug.Log("vel " + rb.velocity);
-            } //rb.velocity = new Vector3(3, 0, 0);
-             else if(!IceLevel)
+            // if (IceBlock1.OnIce)
+            // {
+            //     rb.AddForce(new Vector2(40, 0));
+            //   //  Debug.Log("vel " + rb.velocity);
+            // } //rb.velocity = new Vector3(3, 0, 0);
+            //  else 
+             if(!IceLevel)
             {
                 rb.AddForce(new Vector2(12, 0));
             }
@@ -62,13 +62,14 @@ public bool IceLevel;
         {
             goingRight = false;
             rb.AddForce(new Vector2(-12, 0));
-            if (IceBlock1.OnIce)
-            {
+            // if (IceBlock1.OnIce)
+            // {
 
-                rb.AddForce(new Vector2(-40, 0));
-               // Debug.Log("vel " + rb.velocity);
-            }
-            else if(!IceLevel)
+            //     rb.AddForce(new Vector2(-40, 0));
+            //    // Debug.Log("vel " + rb.velocity);
+            // }
+            // else 
+            if(!IceLevel)
             {
                 rb.AddForce(new Vector2(-12, 0));
             }
