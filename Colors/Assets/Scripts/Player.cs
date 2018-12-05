@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     public bool goingRight;
 public bool IceLevel;
+//public AudioClip death;  
     void Start()
     {
         character = GameObject.FindGameObjectsWithTag("Player")[0];
@@ -23,6 +24,9 @@ public bool IceLevel;
         canJump = true;
         //GameObject iceBlock = GameObject.Find("IceBlock");
         //IceBlock1 = iceBlock.GetComponent<IceBlock>();
+    //    GetComponent<AudioSource> ().playOnAwake = false;
+    //     GetComponent<AudioSource> ().clip = death;
+
     }
 
     // Update is called once per frame
@@ -153,6 +157,7 @@ public bool IceLevel;
             if (collision.gameObject == floor[i])
             {
                 //  Debug.Log("WASTED");
+                //GetComponent<AudioSource> ().Play ();
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
         }

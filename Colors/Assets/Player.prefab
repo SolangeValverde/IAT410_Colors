@@ -102,6 +102,9 @@ MonoBehaviour:
   character: {fileID: 1071907355565126}
   door: []
   floor: []
+  goingRight: 0
+  IceLevel: 0
+  death: {fileID: 8300000, guid: 568ce9b6803085d468444ead45bb1c50, type: 3}
 --- !u!212 &212956120599969130
 SpriteRenderer:
   m_ObjectHideFlags: 1
