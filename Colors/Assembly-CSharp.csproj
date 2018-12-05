@@ -55,10 +55,8 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Bars.cs" />
      <Compile Include="Assets\Scripts\changingColors.cs" />
-     <Compile Include="Assets\Scripts\DeathSound.cs" />
      <Compile Include="Assets\Scripts\GameMusicPlayer.cs" />
      <Compile Include="Assets\Scripts\IceBlock.cs" />
-     <Compile Include="Assets\Scripts\LevelComplete.cs" />
      <Compile Include="Assets\Scripts\MovingBars.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\PlayerFollower.cs" />
